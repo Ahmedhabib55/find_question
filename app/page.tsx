@@ -130,7 +130,9 @@ export default function Home() {
     >
       <div className="max-w-3xl mx-auto space-y-8">
         <div className="text-center space-y-6">
-          <h1 className="text-4xl font-bold tracking-tight">Question Search</h1>
+          <h1 className="sm:text-xl text-4xl font-bold tracking-tight">
+            Question Search
+          </h1>
 
           <ToggleGroup
             type="single"
@@ -138,7 +140,7 @@ export default function Home() {
             onValueChange={(value) => {
               if (value) setSelectedSubject(value as Subject);
             }}
-            className="justify-center"
+            className="justify-center overflow-hidden overflow-x-auto"
           >
             {subjects.map((subject) => (
               <ToggleGroupItem
@@ -170,7 +172,7 @@ export default function Home() {
             onOpenChange={setIsDialogOpen}
           >
             <DialogTrigger asChild>
-              <Button className=" lg:flex">
+              <Button className="hidden lg:flex">
                 <Plus className="h-4 w-4 mr-2" />
                 Add Question
               </Button>
